@@ -1,0 +1,185 @@
+:root {
+  --main-color: #ecf5eb;
+
+  /* Акцентный цвет (кнопки, ссылки, заголовки) */
+  --accent-color: #2d6847;
+
+  /* Поддерживающий цвет (тексты, мелкие детали) */
+  --supporting-color: #f2e8cf;
+
+  /* Второй акцент (дополнительные акценты или hover) */
+  --secondary-accent-color: #8c674a;
+
+  /* Дополнительные переменные для гибкости */
+  --text-color: #2a6041;
+  --background-color: #ecedef;
+  --button-hover-color: #8c674a;
+  
+}
+
+/* Основные стили для body */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+}
+
+/* Заголовки */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--accent-color);
+}
+
+/* Кнопки */
+.btn {
+    background-color: #212529b5; 
+    border: 1px solid var(--accent-color); 
+    font-weight: 600; 
+    color: var(--main-color);
+    border-radius: 25px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .btn:hover {
+    background-color: var(--button-hover-color); 
+    transform: scale(1.05); 
+    color: var(--main-color) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .btn:active {
+    transform: scale(0.98); 
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); 
+  }
+
+/* Ссылки */
+a {
+  color: var(--accent-color);
+  text-decoration: none !important;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-accent-color) !important;
+  text-decoration: underline; /* Добавляем подчеркивание */
+  transform: scale(1.05); /* Легкое увеличение текста */
+}
+
+
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://ivorytkani.ru/uploads/2024/08/aktual-nye-cveta-trendy-v-mode-na-2025-god-cto-budet-aktual-no.webp');
+    background-size: cover;
+    background-position: top;
+    opacity: 0.7; /* Прозрачность только для фона */
+    z-index: -1;  
+  }
+
+  .hero-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .hero-title {
+    font-size: 5rem;
+    font-weight: 900;
+    z-index: 2;
+    color: #1d3930;
+  }
+  
+  .hero-description {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .discount-banner img{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: auto;
+  }
+  
+  .banner-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .banner-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .popular-products .card {
+    border: none;
+  }
+  
+  .popular-products .card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .popular-products .card-body {
+    text-align: center;
+  }
+  
+  .popular-products .btn {
+    background-color: var(--accent-color);
+    color: white;
+  }
+  
+  .photo-callout {
+    background-color: var(--supporting-color);
+  }
+  
+  .callout-title {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .callout-description {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+  
+  .discount-50 {
+    background-color: var(--secondary-accent-color);
+    color: white;
+  }
+  
+  .discount-50 .card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .discount-50 .card-body {
+    text-align: center;
+  }
+  
+  .discount-50 .btn {
+    background-color: var(--accent-color);
+    color: white;
+  }
