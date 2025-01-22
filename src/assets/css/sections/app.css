@@ -2,19 +2,19 @@
   --main-color: #ecf5eb;
 
   /* Акцентный цвет (кнопки, ссылки, заголовки) */
-  --accent-color: #2d6847;
+  --accent-color: #1d3930;
 
   /* Поддерживающий цвет (тексты, мелкие детали) */
   --supporting-color: #f2e8cf;
 
   /* Второй акцент (дополнительные акценты или hover) */
-  --secondary-accent-color: #8c674a;
+  --secondary-accent-color: #49322027;
 
   /* Дополнительные переменные для гибкости */
   --text-color: #2a6041;
   --background-color: #ecedef;
-  --button-hover-color: #8c674a;
-  
+  --brown: #8c674acf;
+  --dark: rgb(33 37 41);
 }
 
 /* Основные стили для body */
@@ -34,29 +34,30 @@ h4 {
 
 /* Кнопки */
 .btn {
-    background-color: #212529b5; 
-    border: 1px solid var(--accent-color); 
-    font-weight: 600; 
-    color: var(--main-color);
-    border-radius: 25px; 
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-  }
-  
-  .btn:hover {
-    background-color: var(--button-hover-color); 
-    transform: scale(1.05); 
-    color: var(--main-color) !important;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); 
-  }
-  
-  .btn:active {
-    transform: scale(0.98); 
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); 
-  }
+  background-color: #212529b5;
+  border: 1px solid var(--accent-color);
+  font-weight: 600;
+  color: var(--main-color);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background-color: var(--brown);
+  transform: scale(1.05);
+  color: var(--main-color) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
 
 /* Ссылки */
 a {
@@ -66,120 +67,240 @@ a {
 }
 
 a:hover {
-  color: var(--secondary-accent-color) !important;
+  color: var(--text-color) !important;
   text-decoration: underline; /* Добавляем подчеркивание */
   transform: scale(1.05); /* Легкое увеличение текста */
 }
 
-
 .hero-section {
-    background-size: cover;
-    background-position: center;
-    color: white;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://ivorytkani.ru/uploads/2024/08/aktual-nye-cveta-trendy-v-mode-na-2025-god-cto-budet-aktual-no.webp");
+  background-size: cover;
+  background-position: top;
+  opacity: 0.7; /* Прозрачность только для фона */
+  z-index: -1;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+.hero-title {
+  font-size: 5rem;
+  font-weight: 900;
+  z-index: 2;
+  color: #1d3930;
+}
+
+.hero-description {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+img {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+
+.banner-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.banner-description {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.card {
+  border: none;
+  height: 380px;
+  border-radius:  15px;
+  padding: 5px;
+}
+
+.card img {
+  height: 200px;
+  object-fit: contain;
+}
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+.card-text {
+  font-size: 14px;
+  color: var(--brown);
+  font-weight: 800;
+}
+
+.card-body {
+  text-align: center;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.photo-callout {
+  background-color: var(--supporting-color);
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.callout-description {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: var(--brown);
+}
+
+ .nf-container{
+    width: 100%;
     height: 100vh;
+    background-color: var(--dark);
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+
+ }
+
+ .nf-title{
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--main-color);
+ }
+
+
+
+ .categories-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--accent-color);
   }
-  .hero-section::before {
-    content: '';
+  
+  .category-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark);
+  }
+  
+  .category-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+  
+  .category-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('https://ivorytkani.ru/uploads/2024/08/aktual-nye-cveta-trendy-v-mode-na-2025-god-cto-budet-aktual-no.webp');
-    background-size: cover;
-    background-position: top;
-    opacity: 0.7; /* Прозрачность только для фона */
-    z-index: -1;  
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Полупрозрачный слой */
+    z-index: 1;
+    transition:   0.3s ease;
+  }
+  
+  .category-card:hover .category-overlay {
+    background: rgba(0, 0, 0, 0.6); /* Затемнение при наведении */
   }
 
-  .hero-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+
+  :root {
+    --main-color: #ecf5eb;
+    --accent-color: #1d3930;
+    --supporting-color: #f2e8cf;
+    --secondary-accent-color: #49322027;
+    --text-color: #2a6041;
+    --background-color: #ecedef;
+    --brown: #8c674acf;
+    --dark: rgb(33, 37, 41);
+  }
+  
+
+  
+ 
+  
+  .product-card {
+    height: 100vh;
+    align-content:center;
     align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     text-align: center;
-    gap: 30px;
   }
   
-  .hero-title {
-    font-size: 5rem;
-    font-weight: 900;
-    z-index: 2;
-    color: #1d3930;
+  .product-image {
+    height: 90vh;
+    object-fit: contain;
   }
   
-  .hero-description {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .discount-banner img{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    height: auto;
-  }
-  
-  .banner-title {
-    font-size: 2.5rem;
+  .product-title {
+    font-size: 1.8rem;
     font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 10px;
   }
   
-  .banner-description {
+  .product-category {
     font-size: 1.2rem;
+    font-style: italic;
+    color: var(--secondary-accent-color);
+    margin-bottom: 15px;
+  }
+  
+  .product-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--brown);
     margin-bottom: 20px;
   }
   
-  .popular-products .card {
-    border: none;
+  .product-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
   }
   
-  .popular-products .card img {
-    height: 200px;
-    object-fit: cover;
-  }
+
   
-  .popular-products .card-body {
-    text-align: center;
-  }
-  
-  .popular-products .btn {
-    background-color: var(--accent-color);
-    color: white;
-  }
-  
-  .photo-callout {
-    background-color: var(--supporting-color);
-  }
-  
-  .callout-title {
-    font-size: 3rem;
-    font-weight: bold;
-  }
-  
-  .callout-description {
-    font-size: 1.5rem;
-    margin-top: 20px;
-  }
-  
-  .discount-50 {
-    background-color: var(--secondary-accent-color);
-    color: white;
-  }
-  
-  .discount-50 .card img {
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .discount-50 .card-body {
-    text-align: center;
-  }
-  
-  .discount-50 .btn {
-    background-color: var(--accent-color);
-    color: white;
-  }

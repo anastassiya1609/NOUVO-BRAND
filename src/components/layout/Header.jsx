@@ -1,21 +1,25 @@
+import { Link } from "react-router-dom";
+
+
+
 export default function Header() {
   return (
-    <header class="bg-dark text-white p-3">
-      <div class="container">
-        <div class="d-flex justify-content-between">
-          <a href="index.html" class="text-white h3">
+    <header className="bg-dark text-white p-3">
+      <div className="container">
+        <div className="d-flex justify-content-between align-items-center" >
+          <Link to="/" className="text-white h3">
             NOUVO BRAND
-          </a>
+          </Link>
           <nav>
-            <a href="index.html" class="text-white mx-2">
+            <Link to="/" className="text-white mx-2">
               Главная
-            </a>
-            <a href="categories.html" class="text-white mx-2">
+            </Link>
+            <Link to="/categories" className="text-white mx-2">
               Категории
-            </a>
-            <a href="products.html" class="text-white mx-2">
+            </Link>
+            <Link to="/products" className="text-white mx-2">
               Все товары
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
