@@ -7,6 +7,7 @@ import CategoriesPage from "./pages/CategoriesPage";
 import AllProducts from "./pages/AllProductsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import ProductSinglePage from "./pages/ProductSinglePage";
+import ProductsByCategoryPage from "./pages/ProductsByCategoryPage";
 
 
 
@@ -20,6 +21,8 @@ function App() {
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/products" element={<AllProducts/>} />
         <Route path="/products/:id" element={<ProductSinglePage/>}/>
+        <Route path="/category/:id" element={<ProductsByCategoryPage/>}/>
+
         <Route path="*" element={<NotFoundPage/>} />
       </Routes>
       <Footer />

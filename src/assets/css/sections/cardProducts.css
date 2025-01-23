@@ -1,0 +1,31 @@
+/* CardItems */
+
+.card {
+    border: none;
+    height: 380px;
+    border-radius: 15px;
+    padding: 5px;
+  }
+  
+  .card img {
+    height: 200px;
+    object-fit: contain;
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .card-text {
+    font-size: 14px;
+    color: var(--brown);
+    font-weight: 800;
+  }
+  
+  .card-body {
+    text-align: center;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }

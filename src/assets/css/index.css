@@ -1,3 +1,7 @@
 @import url(./reset.css);
-@import url(./variables.css);
 @import url(../css/sections/app.css);
+@import url(../css/sections/homePage.css);
+@import url(../css/sections/cardProducts.css);
+@import url(../css/sections/category.css);
+@import url(../css/sections/products.css);
+@import url(../css/sections/loader.css);

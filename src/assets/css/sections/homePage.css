@@ -1,0 +1,53 @@
+/* Home Page */
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("https://ivorytkani.ru/uploads/2024/08/aktual-nye-cveta-trendy-v-mode-na-2025-god-cto-budet-aktual-no.webp");
+    background-size: cover;
+    background-position: top;
+    opacity: 0.7; /* Прозрачность только для фона */
+    z-index: -1;
+  }
+  
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .hero-title {
+    font-size: 5rem;
+    font-weight: 900;
+    z-index: 2;
+    color: #1d3930;
+  }
+  
+  .hero-description {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .photo-callout {
+    background-color: var(--supporting-color);
+  }
+  .callout-description {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: var(--brown);
+  }

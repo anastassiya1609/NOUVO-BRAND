@@ -1,10 +1,19 @@
- 
 import CardProduct from "../components/products/CardProduct";
 import { useFetchProducts } from "../utils/getAllProducts";
- 
+import Loader from './../components/shared/Loader';
 
 export default function AllProductsPage() {
-  const products = useFetchProducts()
+  const {products, isLoading} = useFetchProducts();
+
+  if (isLoading) {
+      return (
+        <div className="wrapper">
+          <div className="album-wrapper">
+            <Loader />
+          </div>
+        </div>
+      );
+    }
 
   return (
     <section className="py-5">
