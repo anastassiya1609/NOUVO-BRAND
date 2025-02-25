@@ -1,19 +1,29 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Loader from './../components/shared/Loader';
+import Loader from "./../components/shared/Loader";
+import { axiosInstance } from "../services/axios";
+import PopupFromOrder from "../components/sections/PopupFromOrder";
 
 export default function ProductSinglePage() {
   const { id } = useParams();
   const [singleProduct, setSingleProduct] = useState([]);
   const [isLoading, setLoading] = useState(false);
+  const [isPopupOpen, setPopupOpen] = useState(false);
+
+  function openPopup() {
+    setPopupOpen(true);
+  }
+
+  function closePopup() {
+    setPopupOpen(false);
+  }
 
   useEffect(() => {
     async function fetchProductData() {
       try {
         setLoading(true);
-        const res = await fetch(`https://fakestoreapi.com/products/${id}`);
-        const data = await res.json();
-        setSingleProduct(data);
+        const res = await axiosInstance.get(`/${id}`);
+        setSingleProduct(res.data);
       } catch (error) {
         console.log(error);
       } finally {
@@ -49,7 +59,10 @@ export default function ProductSinglePage() {
           <p className="product-category">{singleProduct.category}</p>
           <p className="product-price">{singleProduct.price} $</p>
           <p className="product-description">{singleProduct.description}</p>
-          <button className="btn">Купить сейчас</button>
+          <button onClick={openPopup} className="btn">
+            Купить сейчас
+          </button>
+          {isPopupOpen && <PopupFromOrder closePopup={closePopup} setPopupOpen={setPopupOpen} />}
         </div>
       </div>
     </div>

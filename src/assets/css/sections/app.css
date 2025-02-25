@@ -24,7 +24,6 @@ h4 {
 
 .btn {
   background-color: #212529b5;
-  border: 1px solid var(--accent-color);
   font-weight: 600;
   color: var(--main-color);
   border-radius: 25px;

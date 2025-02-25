@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CategoriesList from "../components/categories/CategoriesList";
 import Loader from './../components/shared/Loader';
+import { axiosInstance } from "../services/axios";
 
 export default function CategoriesPage() {
   const [categories, setCategories] = useState([]);
@@ -12,9 +13,8 @@ export default function CategoriesPage() {
     async function fetchCategories() {
       try {
         setLoading(true);
-        const res = await fetch("https://fakestoreapi.com/products/categories");
-        const data = await res.json();
-        setCategories(data);
+        const res = await axiosInstance.get("/categories")
+        setCategories(res.data);
       } catch (error) {
         console.log(error);
       } finally {

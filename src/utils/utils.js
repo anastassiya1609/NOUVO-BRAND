@@ -6,3 +6,5 @@ export   const shuffleProducts = (products, num) => {
     }
     return shuffled;
   };
+
+  

@@ -1,9 +1,15 @@
+import OrderForm from "../components/sections/OrderForm";
+import PromoSlider from "../components/sections/PromoSlider";
 import { useFetchProducts } from "../utils/getAllProducts";
 import TopProducts from "./../components/sections/TopProducts";
 import Loader from "./../components/shared/Loader";
 
+
+
 export default function HomePage() {
-  const {products, isLoading} = useFetchProducts();
+  const { products, isLoading } = useFetchProducts();
+
+
 
   if (isLoading) {
     return (
@@ -20,7 +26,7 @@ export default function HomePage() {
       <section className="hero-section">
         <div className="container hero-content">
           <h1 className="hero-title">NOUVO BRAND</h1>
-          <p className="hero-description">
+          <p className="description">
             Молодежный стиль, который вдохновляет. Откройте для себя модные
             коллекции.
           </p>
@@ -30,12 +36,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="discount-banner">
-        <img
-          src="https://minimal.com.ua/wp-content/uploads/2024/09/113Dekstop-ros.jpg"
-          alt=""
-        />
-      </section>
+      <PromoSlider />
 
       <TopProducts
         id="products"
@@ -70,6 +71,8 @@ export default function HomePage() {
         num1="15"
         num2="19"
       ></TopProducts>
+
+      <OrderForm/>
     </div>
   );
 }

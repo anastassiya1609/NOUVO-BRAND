@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CardProduct from "../components/products/CardProduct";
-import Loader from './../components/shared/Loader';
+import Loader from "./../components/shared/Loader";
+import { axiosInstance } from "../services/axios";
 
 export default function ProductsByCategoryPage() {
   const [productsByCategory, setProductsByCategory] = useState([]);
@@ -13,13 +14,11 @@ export default function ProductsByCategoryPage() {
     async function getProductsByCategory() {
       try {
         setLoading(true);
-        const res = await fetch(
-          `https://fakestoreapi.com/products/category/${id}`
-        );
-        const data = await res.json();
-        setProductsByCategory(data);
-        if (data.length > 0) {
-          setCategory(data[0].category); // Устанавливаем категорию из первого товара
+        const res = await axiosInstance.get(`/category/${id}`);
+
+        setProductsByCategory(res.data);
+        if (res.data.length > 0) {
+          setCategory(res.data[0].category); 
         }
       } catch (error) {
         console.log(error);

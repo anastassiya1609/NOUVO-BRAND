@@ -5,3 +5,6 @@
 @import url(../css/sections/category.css);
 @import url(../css/sections/products.css);
 @import url(../css/sections/loader.css);
+@import "slick-carousel/slick/slick.css"; 
+@import "slick-carousel/slick/slick-theme.css";
+

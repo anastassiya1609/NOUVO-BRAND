@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { axiosInstance } from "../services/axios";
 
 export function useFetchProducts() {
   const [products, setProducts] = useState([]);
@@ -8,9 +9,8 @@ export function useFetchProducts() {
     async function fetchProductsData() {
       try {
         setLoading(true);
-        const res = await fetch("https://fakestoreapi.com/products");
-        const data = await res.json();
-        setProducts(data);
+        const res = await axiosInstance.get("");
+        setProducts(res.data);
       } catch (error) {
         console.log(error);
       } finally{
