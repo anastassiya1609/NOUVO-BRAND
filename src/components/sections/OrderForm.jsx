@@ -146,7 +146,7 @@ export default function OrderForm() {
           </div>
         </form>
         {isPopupOpen && (
-          <HomePopup formData={formData} closePopup={closePopup} />
+          <HomePopup formData={formData} closePopup={closePopup} setPopupOpen={setPopupOpen}/>
         )}
       </div>
     </section>

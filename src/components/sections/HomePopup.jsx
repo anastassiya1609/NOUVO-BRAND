@@ -1,7 +1,7 @@
-export default function HomePopup({formData, closePopup}){
+export default function HomePopup({formData, closePopup, setPopupOpen}){
     return(
-        <div className="popup-overlay">
-        <div className="popup">
+      <div className="popup-overlay " onClick={() => setPopupOpen(false)}>
+        <div className="popup" onClick={(e) => e.stopPropagation()}>
           <h3 className="title">Ваш заказ оформлен!</h3>
           <p className="description">
             Менеджер свяжется с вами для подтверждения.
